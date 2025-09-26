@@ -1,15 +1,10 @@
-# ==============================================================================
-# 1. IMPORT LIBRARIES
-# ==============================================================================
-# Import numpy for efficient numerical operations
-import numpy as np
-# Import matplotlib.pyplot for creating plots
-import matplotlib.pyplot as plt
+#1 All the important imports
+import numpy as np  # for the calculations
 
-# ==============================================================================
+import matplotlib.pyplot as plt #  for creating plots
+
 # 2. DEFINE SIMULATION PARAMETERS FOR EACH CONDITION
-# ==============================================================================
-# This section now defines parameter sets for three distinct biological conditions:
+# This section defines parameter sets for three distinct biological conditions:
 # Healthy, Alzheimer's Disease (AD), and AD with Treatment.
 
 def setup_parameters():
@@ -18,7 +13,7 @@ def setup_parameters():
     Returns:
         dict: A dictionary containing parameter sets for each condition.
     """
-    # --- Shared Parameters ---
+    # Shared Parameter
     # These parameters are the same for all conditions
     base_params = {
         'total_time': 100,         # Total simulation duration in seconds
@@ -28,7 +23,7 @@ def setup_parameters():
         'tetanus_end': 45          # Stimulation ends at the same time
     }
 
-    # --- Condition-Specific Parameters ---
+    # Condition-Specific Parameters 
     params = {
         'Healthy': {
             **base_params, # Inherit shared parameters
@@ -50,9 +45,9 @@ def setup_parameters():
     }
     return params
 
-# ==============================================================================
-# 3. RUN THE LTP SIMULATION (NO CHANGES NEEDED HERE)
-# ==============================================================================
+
+# 3. RUN THE LTP SIMULATION 
+
 # This function is flexible and works for any set of parameters we give it.
 # We will simply call it three times, once for each condition.
 
@@ -82,7 +77,7 @@ def run_ltp_simulation(params):
 
     return time_steps, synaptic_weight
 
-# ==============================================================================
+
 # 4. PLOT THE COMPARATIVE RESULTS
 # ==============================================================================
 # This function is updated to plot the results from all three simulations
